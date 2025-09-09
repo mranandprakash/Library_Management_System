@@ -1,0 +1,14 @@
+.hidden{
+    display:none;
+}
+table tr th{
+    border:1px solid black;
+}
+.table{
+  margin: 0 auto;
+  width:300px;
+  display: block;
+}
+.tablediv{
+    margin-top: 30px;
+}
