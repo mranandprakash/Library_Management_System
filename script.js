@@ -1,5 +1,5 @@
 let books=[];
-let users=[];
+let users=[{userid:"john123",password:"pass1234"}];
 let currentuser=null;
 function addbooks(){
     const title=document.getElementById("title").value;
