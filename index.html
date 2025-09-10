@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <div class="admindashboard ">
+    <div class="admindashboard hidden ">
        <input type="text" placeholder="title" class="title " id="title">
        <input type="text" placeholder="Author" class="Author" id="Author">
        <input type="text" placeholder="Category" class="Category" id="Category">
@@ -17,7 +17,7 @@
        <button class="edit" id="edit">Edit</button>
        <button class="delete" id="delete">Delete</button> 
     </div>
-    <div class="tablediv">
+    <div class="tablediv hidden">
         <table class="table">
             <tr>
                 <th>title</th>
@@ -27,6 +27,14 @@
             </tr>
            <tbody id="tbody"></tbody>
         </table>
+    </div>
+    <div id="login">
+        <h2>Login</h2>
+        <input type="text" placeholder="userid" class="userid" id="userid">
+        <div></div>
+        <input type="password" placeholder="password" class="password" id="password">
+        <div></div>
+        <button class="btn" id="btn">Login</button>
     </div>
     <script src="script.js"></script>
 </body>
