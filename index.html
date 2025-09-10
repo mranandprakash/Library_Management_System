@@ -13,7 +13,7 @@
        <input type="text" placeholder="Author" class="Author" id="Author">
        <input type="text" placeholder="Category" class="Category" id="Category">
        <input type="text" placeholder="Availability" class="avail" id="avail">
-       <button class="add" id="add">Add</button>
+       <button class="add" id="add" onclick="addbooks()">Add</button>
        <button class="edit" id="edit">Edit</button>
        <button class="delete" id="delete">Delete</button> 
     </div>
@@ -25,6 +25,7 @@
                  <th>Category</th>
                  <th>Availability</th>
             </tr>
+           <tbody id="tbody"></tbody>
         </table>
     </div>
     <script src="script.js"></script>
