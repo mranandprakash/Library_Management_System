@@ -36,6 +36,9 @@ function renderbooks(){
         <td>${book.author}</td>
         <td>${book.category}</td>
         <td>${book.avail}</td>
+        <td><button onclick="editbook('${book.id}')">edit</button>
+        <button onclick="deletebook('${book.id}')">delete</button>
+        </td>
         `
         tbody.appendChild(row);
     })
@@ -54,9 +57,11 @@ function handlelogin(){
         if(currentuser.usertype==="admin"){
         admindashboard.classList.remove("hidden");
         tablediv.classList.remove("hidden");
+        renderbooks();
         }
         else{
             studentdashboard.classList.remove("hidden");
+            
         }
 
     }
@@ -124,7 +129,27 @@ function render(){
 
 
 }
+function deletebook(bookid){
+    const filteredbook=books.filter(b=>b.id!==bookid);
+    books=filteredbook;
+    renderbooks();
+}
+function editbook(bookid){
+    const book=books.find(b=>b.id===bookid);
+    if(!book){
+        return;
+    }
+    document.getElementById("title").value=book.title;
+    document.getElementById("Author").value=book.author;
+    document.getElementById("Category").value=book.category;
+    document.getElementById("avail").value=book.avail;
+    deletebook(bookid);
+    renderbooks();
 
+
+
+    
+}
 render();
 
 
