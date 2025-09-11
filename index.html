@@ -36,7 +36,7 @@
         <div id="error"></div>
         <button class="btn" id="btn" onclick="handlelogin()">Login</button>
     </div>
-    <div class="studentdashboard" id="studentdashboard">
+    <div class="studentdashboard hidden" id="studentdashboard">
           <h2>Library — Student Dashboard</h2>
             <p>You can borrow up to 3 books. Due date is 7 days from borrow.</p>
         <input type="text" placeholder="search" class="search" id="search">
@@ -51,7 +51,8 @@
             <tbody></tbody>
           </table>
         <div></div>
-
+        <h3>Your Borrowed Books (<span id="borrowCount">0</span>/3)</h3>
+          <ul id="borrowedList"></ul>
     </div>
     <script src="script.js"></script>
 </body>
