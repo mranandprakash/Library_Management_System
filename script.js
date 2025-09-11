@@ -7,6 +7,7 @@ let users=[{userid:"john123",password:"pass1234",usertype:"student"},
     {userid:"deepak",password:"pass123",usertype:"admin"}
 ];
 let currentuser={userid:"john123",password:"pass1234",usertype:"student"};
+const studentdashboard=document.getElementById("studentdashboard");
 function addbooks(){
     const title=document.getElementById("title").value;
     const author=document.getElementById("Author").value;
@@ -50,8 +51,13 @@ function handlelogin(){
     if(user){
         currentuser=user;
         login.style.display="none";
+        if(currentuser.usertype==="admin"){
         admindashboard.classList.remove("hidden");
         tablediv.classList.remove("hidden");
+        }
+        else{
+            studentdashboard.classList.remove("hidden");
+        }
 
     }
 
@@ -100,7 +106,25 @@ function render(){
         `;
         tbody.appendChild(row);
     });
+    const mybooks=books.filter(b=>b.borrowedby===currentuser.userid);
+    document.getElementById("borrowCount").textContent=mybooks.length;
+    const list = document.getElementById("borrowedList");
+    list.innerHTML = "";
+    if(mybooks.length==0){
+        list.innerHTML="<li>no books borrowed</li>";
+    }
+    else{
+        mybooks.forEach(b=>{
+        const li = document.createElement("li");
+        li.textContent = `${b.title} (Due: ${b.duedate})`;
+         list.appendChild(li);
+        })
+    }
+
+
+
 }
+
 render();
 
 
